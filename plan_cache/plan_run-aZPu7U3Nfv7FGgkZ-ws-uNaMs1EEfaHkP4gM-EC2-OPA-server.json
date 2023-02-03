@@ -1,0 +1,263 @@
+{
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "expressions": {
+                    "region": {
+                        "references": [
+                            "var.region"
+                        ]
+                    }
+                },
+                "full_name": "registry.terraform.io/hashicorp/aws",
+                "name": "aws",
+                "version_constraint": "~> 4.16"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_instance.ec2",
+                    "expressions": {
+                        "ami": {
+                            "references": [
+                                "var.ami"
+                            ]
+                        },
+                        "associate_public_ip_address": {
+                            "constant_value": true
+                        },
+                        "instance_type": {
+                            "references": [
+                                "var.instance_type"
+                            ]
+                        },
+                        "key_name": {
+                            "references": [
+                                "var.key_name"
+                            ]
+                        },
+                        "tags": {
+                            "references": [
+                                "var.instance_name"
+                            ]
+                        }
+                    },
+                    "mode": "managed",
+                    "name": "ec2",
+                    "provider_config_key": "aws",
+                    "schema_version": 1,
+                    "type": "aws_instance"
+                }
+            ],
+            "variables": {
+                "ami": {
+                    "default": "ami-00874d747dde814fa",
+                    "description": "The AMI Terraform deploys"
+                },
+                "instance_name": {
+                    "default": "terraform",
+                    "description": "The name Terraform deploys"
+                },
+                "instance_type": {
+                    "default": "t2.micro",
+                    "description": "The instance type Terraform deploys"
+                },
+                "key_name": {
+                    "default": "terraform",
+                    "description": "The key name Terraform deploys"
+                },
+                "region": {
+                    "default": "us-east-1",
+                    "description": "The region Terraform deploys your instance"
+                },
+                "subnet_id": {
+                    "default": "subnet-012d7c130575bf0f1"
+                },
+                "vpc_security_group_ids": {
+                    "default": "sg-0a015e7a7b4809533"
+                }
+            }
+        }
+    },
+    "format_version": "1.1",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_instance.ec2",
+                    "mode": "managed",
+                    "name": "ec2",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 1,
+                    "sensitive_values": {
+                        "capacity_reservation_specification": [],
+                        "credit_specification": [],
+                        "ebs_block_device": [],
+                        "enclave_options": [],
+                        "ephemeral_block_device": [],
+                        "ipv6_addresses": [],
+                        "launch_template": [],
+                        "maintenance_options": [],
+                        "metadata_options": [],
+                        "network_interface": [],
+                        "private_dns_name_options": [],
+                        "root_block_device": [],
+                        "secondary_private_ips": [],
+                        "security_groups": [],
+                        "tags": {},
+                        "tags_all": {},
+                        "vpc_security_group_ids": []
+                    },
+                    "type": "aws_instance",
+                    "values": {
+                        "ami": "ami-00874d747dde814fa",
+                        "associate_public_ip_address": true,
+                        "credit_specification": [],
+                        "get_password_data": false,
+                        "hibernation": null,
+                        "instance_type": "t2.micro",
+                        "key_name": "terraform",
+                        "launch_template": [],
+                        "source_dest_check": true,
+                        "tags": {
+                            "Name": "terraform"
+                        },
+                        "tags_all": {
+                            "Name": "terraform"
+                        },
+                        "timeouts": null,
+                        "user_data_replace_on_change": false,
+                        "volume_tags": null
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_instance.ec2",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "after": {
+                    "ami": "ami-00874d747dde814fa",
+                    "associate_public_ip_address": true,
+                    "credit_specification": [],
+                    "get_password_data": false,
+                    "hibernation": null,
+                    "instance_type": "t2.micro",
+                    "key_name": "terraform",
+                    "launch_template": [],
+                    "source_dest_check": true,
+                    "tags": {
+                        "Name": "terraform"
+                    },
+                    "tags_all": {
+                        "Name": "terraform"
+                    },
+                    "timeouts": null,
+                    "user_data_replace_on_change": false,
+                    "volume_tags": null
+                },
+                "after_sensitive": {
+                    "capacity_reservation_specification": [],
+                    "credit_specification": [],
+                    "ebs_block_device": [],
+                    "enclave_options": [],
+                    "ephemeral_block_device": [],
+                    "ipv6_addresses": [],
+                    "launch_template": [],
+                    "maintenance_options": [],
+                    "metadata_options": [],
+                    "network_interface": [],
+                    "private_dns_name_options": [],
+                    "root_block_device": [],
+                    "secondary_private_ips": [],
+                    "security_groups": [],
+                    "tags": {},
+                    "tags_all": {},
+                    "vpc_security_group_ids": []
+                },
+                "after_unknown": {
+                    "arn": true,
+                    "availability_zone": true,
+                    "capacity_reservation_specification": true,
+                    "cpu_core_count": true,
+                    "cpu_threads_per_core": true,
+                    "credit_specification": [],
+                    "disable_api_stop": true,
+                    "disable_api_termination": true,
+                    "ebs_block_device": true,
+                    "ebs_optimized": true,
+                    "enclave_options": true,
+                    "ephemeral_block_device": true,
+                    "host_id": true,
+                    "host_resource_group_arn": true,
+                    "iam_instance_profile": true,
+                    "id": true,
+                    "instance_initiated_shutdown_behavior": true,
+                    "instance_state": true,
+                    "ipv6_address_count": true,
+                    "ipv6_addresses": true,
+                    "launch_template": [],
+                    "maintenance_options": true,
+                    "metadata_options": true,
+                    "monitoring": true,
+                    "network_interface": true,
+                    "outpost_arn": true,
+                    "password_data": true,
+                    "placement_group": true,
+                    "placement_partition_number": true,
+                    "primary_network_interface_id": true,
+                    "private_dns": true,
+                    "private_dns_name_options": true,
+                    "private_ip": true,
+                    "public_dns": true,
+                    "public_ip": true,
+                    "root_block_device": true,
+                    "secondary_private_ips": true,
+                    "security_groups": true,
+                    "subnet_id": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "tenancy": true,
+                    "user_data": true,
+                    "user_data_base64": true,
+                    "vpc_security_group_ids": true
+                },
+                "before": null,
+                "before_sensitive": false
+            },
+            "mode": "managed",
+            "name": "ec2",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "type": "aws_instance"
+        }
+    ],
+    "terraform_version": "1.3.7",
+    "variables": {
+        "ami": {
+            "value": "ami-00874d747dde814fa"
+        },
+        "instance_name": {
+            "value": "terraform"
+        },
+        "instance_type": {
+            "value": "t2.micro"
+        },
+        "key_name": {
+            "value": "terraform"
+        },
+        "region": {
+            "value": "us-east-1"
+        },
+        "subnet_id": {
+            "value": "subnet-012d7c130575bf0f1"
+        },
+        "vpc_security_group_ids": {
+            "value": "sg-0a015e7a7b4809533"
+        }
+    }
+}

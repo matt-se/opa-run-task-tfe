@@ -109,7 +109,7 @@ def process_opa(app, rq):
                             "type": "task-results",
                             "attributes": {
                                 "status": "passed",
-                                "message": "OPA Check Passed - sample message from OPA",
+                                "message": f"OPA Check Passed - sample message from OPA -->  {str(result)}",
                                 "url": "https://example.com"
                             }
                         }
