@@ -10,8 +10,9 @@ def hello_world():
 
 @app.route("/runtask", methods = ['GET', 'POST'])
 def run_task():
-    print("incoming request on /runtask")
     app.logger.info("incoming request on /runtask")
+    print(request.method)
+    print(request.json)
     if request.method == 'POST':
         rq = request.json
         app.logger.info('Processing - %s on workspace - %s [%s] ', rq['run_id'], rq['workspace_name'], rq['workspace_id'])
