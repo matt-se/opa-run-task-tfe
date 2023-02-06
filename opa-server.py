@@ -11,6 +11,7 @@ def hello_world():
 @app.route("/runtask", methods = ['GET', 'POST'])
 def run_task():
     app.logger.info("incoming request on /runtask")
+    logger.info("incoming request on /runtask")
     print(request.method)
     print(request.json)
     if request.method == 'POST':
