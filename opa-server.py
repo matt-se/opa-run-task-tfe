@@ -1,6 +1,5 @@
 from flask import Flask, redirect, url_for, request
 from runtask import *
-import sys
 
 app = Flask(__name__)
 
@@ -11,6 +10,7 @@ def hello_world():
 
 @app.route("/runtask", methods = ['GET', 'POST'])
 def run_task():
+    print("incoming request on /runtask")
     app.logger.info("incoming request on /runtask")
     if request.method == 'POST':
         rq = request.json
