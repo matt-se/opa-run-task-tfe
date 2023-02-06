@@ -1,6 +1,8 @@
 from urllib.request import Request, urlopen
 import subprocess, ssl, json,  shlex, os
-#from opa_client.opa import OpaClient
+import sys
+
+
 
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
